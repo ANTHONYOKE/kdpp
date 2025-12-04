@@ -1,0 +1,201 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KDPP – Contact Us</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #f3f6fa;
+    }
+
+    /* HEADER */
+    .header {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #004080, #0073e6);
+        color: white;
+        animation: fadeDown 1.5s ease-out;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 45px;
+        animation: textPop 1.8s ease-out;
+    }
+
+    .header p {
+        font-size: 18px;
+        margin-top: 10px;
+        opacity: 0;
+        animation: fadeIn 2s forwards 0.5s;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        padding: 40px;
+        animation: fadeUp 1.6s ease-out;
+    }
+
+    /* LEFT INFO */
+    .info-box {
+        background: white;
+        padding: 25px;
+        width: 35%;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        animation: slideLeft 1.5s ease-out;
+    }
+
+    .info-box h2 {
+        margin-bottom: 10px;
+    }
+
+    /* FORM BOX */
+    .form-box {
+        background: white;
+        padding: 25px;
+        width: 40%;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        animation: slideRight 1.5s ease-out;
+    }
+
+    label {
+        display: block;
+        margin-top: 12px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 12px;
+        background: #0066cc;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        animation: fadeIn 1.5s ease-out;
+    }
+
+    button:hover {
+        background: #004d99;
+    }
+
+    /* SUCCESS MESSAGE */
+    .msg-box {
+        margin-top: 20px;
+        padding: 10px;
+        background: #e2ffe7;
+        border-left: 4px solid #2ecc71;
+        border-radius: 6px;
+        animation: fadeIn 1.2s ease-out;
+    }
+
+    /* SIMPLE ANIMATIONS */
+
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideLeft {
+        from { opacity: 0; transform: translateX(-40px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideRight {
+        from { opacity: 0; transform: translateX(40px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes textPop {
+        0% { transform: scale(0.7); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Contact KDPP</h1>
+    <p>We are here to help you. Send us your message.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="contact-section">
+
+    <!-- LEFT CONTACT INFO -->
+    <div class="info-box">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> support@kdpp.org</p>
+        <p><strong>Phone:</strong> +254 712 345 678</p>
+        <p><strong>Location:</strong> Nairobi, Kenya</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-box">
+        <h2>Send Us a Message</h2>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <label>Your Name</label>
+            <input type="text" name="name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="email" required>
+
+            <label>Subject</label>
+            <input type="text" name="subject" required>
+
+            <label>Your Message</label>
+            <textarea name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        {% if messages %}
+        <div class="msg-box">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,534 @@
+/* ----------- HERO FULLSCREEN BACKGROUND ----------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("../img/peace_background.png") center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: white;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    margin-top: 15px;
+}
+
+.hero-image-person {
+    position: absolute;
+    right: 6%;
+    bottom: 0;
+    z-index: 2;
+}
+
+.hero-image-person img {
+    height: 90vh;
+    object-fit: contain;
+}
+
+/* ----------- KENYAN FLAG ----------- */
+.hero-flag {
+    position: absolute;
+    right: 4%;
+    top: 10%;
+    z-index: 3;
+    animation: floatFlag 4s ease-in-out infinite;
+}
+
+.hero-flag img {
+    width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Smooth floating animation for the flag */
+@keyframes floatFlag {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ----------- REPORT CALL TO ACTION ----------- */
+.cta {
+    background: #0a2038;
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta a {
+    background: #4ec3ff;
+    padding: 14px 30px;
+    border-radius: 8px;
+    color: #0a2038;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.cta a:hover {
+    background: white;
+}
+
+/* ----------- CONTACT & ABOUT PAGES ----------- */
+.page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.page-image {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.page-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 34px;
+    color: #0a2038;
+}
+
+.page-container p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* ----------- CONTACT FORM ----------- */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #0a2038;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background: #4ec3ff;
+    color: #0a2038;
+}
+
+/* ----------- CASES PAGE ----------- */
+.case-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+}
+
+.case-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0a2038;
+}
+
+.case-box p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* ----------- FORM (REPORT PAGE) ----------- */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form textarea {
+    height: 150px;
+    resize: none;
+}
+
+form button {
+    background: #0a2038;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background: #4ec3ff;
+    color: #0a2038;
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+    background: #0a2038;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ----------- RESPONSIVE DESIGN ----------- */
+@media (max-width: 992px) {
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image-person {
+        display: none;
+    }
+
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+.nav {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+
+.nav-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url("{% static 'img/background.jpg' %}") no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    top: 0;
+    left: 0;
+}
+
+/* HERO TEXT */
+.hero-text {
+    position: relative;
+    z-index: 10;
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-text .sub {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.hero-text .desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.highlights {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* HERO IMAGES */
+.hero-images {
+    position: absolute;
+    right: 60px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9;
+}
+
+.person {
+    width: 380px;
+}
+
+.flag {
+    width: 180px;
+    margin-top: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+.animate-fade {
+    animation: fadeIn 1.8s ease forwards;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(200px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide {
+    animation: slideIn 1.5s ease forwards;
+}
+
+/* CTA */
+.cta {
+    background: #111;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cta-btn {
+    padding: 15px 35px;
+    background: red;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-images {
+        position: static;
+        margin-top: 30px;
+    }
+
+    .person {
+        width: 280px;
+    }
+
+    .flag {
+        width: 130px;
+    }
+}
+
+    .hero-flag {
+        display: none;
+    }
+
+    .about-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-row img,
+    .about-text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav h1 {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-content p {
+        width: 90%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* -------------------------
+   GLOBAL
+--------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f7f7f7;
+}
+
+/* -------------------------
+   HERO
+--------------------------*/
+.cases-hero {
+    height: 55vh;
+    background: url('../img/cases-bg.jpg') center/cover no-repeat fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cases-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 700px;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+/* -------------------------
+   CASE GRID
+--------------------------*/
+.cases-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #333;
+}
+
