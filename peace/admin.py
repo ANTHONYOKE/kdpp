@@ -9,9 +9,7 @@ class Last24HoursFilter(admin.SimpleListFilter):
     parameter_name = 'last_24_hours'
 
     def lookups(self, request, model_admin):
-        return [
-            ('yes', 'Last 24 Hours'),
-        ]
+        return [('yes', 'Last 24 Hours')]
 
     def queryset(self, request, queryset):
         if self.value() == 'yes':
@@ -26,30 +24,27 @@ class EvidenceFilter(admin.SimpleListFilter):
     parameter_name = 'evidence_attached'
 
     def lookups(self, request, model_admin):
-        return [
-            ('yes', 'With Evidence'),
-            ('no', 'Without Evidence'),
-        ]
+        return [('yes', 'With Evidence'), ('no', 'Without Evidence')]
 
     def queryset(self, request, queryset):
         if self.value() == 'yes':
-            return queryset.exclude(evidence='')
+            return queryset.exclude(image='')
         if self.value() == 'no':
-            return queryset.filter(evidence='')
+            return queryset.filter(image='')
         return queryset
 
 
 # Main Admin
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ('display_name', 'location', 'category', 'date_submitted', 'anonymous')
+    list_display = ('display_name', 'region', 'county', 'case_type', 'date_submitted', 'anonymous')
     list_filter = (
-        'category',
+        'case_type',
         'anonymous',
         EvidenceFilter,
         Last24HoursFilter,
         'date_submitted'
     )
-    search_fields = ('name', 'location', 'category', 'description')
+    search_fields = ('name', 'region', 'county', 'case_type', 'description', 'keywords')
 
     def display_name(self, obj):
         return "Anonymous" if obj.anonymous else (obj.name or "No Name")
@@ -57,4 +52,3 @@ class ReportAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Report, ReportAdmin)
-

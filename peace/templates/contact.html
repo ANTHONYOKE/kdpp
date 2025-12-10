@@ -1,201 +1,85 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KDPP – Contact Us</title>
-
+<title>KDPP – Contact</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #f3f6fa;
-    }
-
-    /* HEADER */
-    .header {
-        text-align: center;
-        padding: 60px 20px;
-        background: linear-gradient(135deg, #004080, #0073e6);
-        color: white;
-        animation: fadeDown 1.5s ease-out;
-    }
-
-    .header h1 {
-        margin: 0;
-        font-size: 45px;
-        animation: textPop 1.8s ease-out;
-    }
-
-    .header p {
-        font-size: 18px;
-        margin-top: 10px;
-        opacity: 0;
-        animation: fadeIn 2s forwards 0.5s;
-    }
-
-    /* CONTACT SECTION */
-    .contact-section {
-        display: flex;
-        justify-content: center;
-        gap: 35px;
-        padding: 40px;
-        animation: fadeUp 1.6s ease-out;
-    }
-
-    /* LEFT INFO */
-    .info-box {
-        background: white;
-        padding: 25px;
-        width: 35%;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        animation: slideLeft 1.5s ease-out;
-    }
-
-    .info-box h2 {
-        margin-bottom: 10px;
-    }
-
-    /* FORM BOX */
-    .form-box {
-        background: white;
-        padding: 25px;
-        width: 40%;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        animation: slideRight 1.5s ease-out;
-    }
-
-    label {
-        display: block;
-        margin-top: 12px;
-        font-weight: bold;
-    }
-
-    input, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-    }
-
-    button {
-        margin-top: 15px;
-        width: 100%;
-        padding: 12px;
-        background: #0066cc;
-        border: none;
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 16px;
-        animation: fadeIn 1.5s ease-out;
-    }
-
-    button:hover {
-        background: #004d99;
-    }
-
-    /* SUCCESS MESSAGE */
-    .msg-box {
-        margin-top: 20px;
-        padding: 10px;
-        background: #e2ffe7;
-        border-left: 4px solid #2ecc71;
-        border-radius: 6px;
-        animation: fadeIn 1.2s ease-out;
-    }
-
-    /* SIMPLE ANIMATIONS */
-
-    @keyframes fadeDown {
-        from { opacity: 0; transform: translateY(-25px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(40px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideLeft {
-        from { opacity: 0; transform: translateX(-40px); }
-        to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes slideRight {
-        from { opacity: 0; transform: translateX(40px); }
-        to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes textPop {
-        0% { transform: scale(0.7); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-    }
+body { font-family:"Poppins",sans-serif; background:#f7f7f7; margin:0; padding:0; }
+nav { display:flex; justify-content:space-between; align-items:center; padding:18px 50px; background:#002533; }
+nav h1 { color:white; font-size:28px; margin:0; }
+nav ul { display:flex; list-style:none; margin:0; padding:0; gap:25px; }
+nav ul li a { color:white; text-decoration:none; }
+nav ul li a:hover { color:#4ec3ff; }
+.language-selector { text-align:center; margin:20px 0; }
+.language-selector select { padding:8px 12px; border-radius:6px; border:1px solid #ccc; font-size:1rem; cursor:pointer; }
+.contact-section { max-width:800px; margin:60px auto; padding:20px; background:white; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); }
+.contact-section h2 { color:#007bff; }
+.contact-section form input, .contact-section form textarea { width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+.contact-section form button { background:#007bff; color:white; padding:10px 20px; border:none; border-radius:6px; cursor:pointer; }
+.contact-section form button:hover { background:#0056b3; }
+footer { background:#002533; color:white; text-align:center; padding:18px 0; margin-top:50px; }
+footer a { color:#4ec3ff; text-decoration:none; margin:0 8px; }
+footer a:hover { text-decoration:underline; }
 </style>
-
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <h1>Contact KDPP</h1>
-    <p>We are here to help you. Send us your message.</p>
+<!-- NAVBAR -->
+<nav>
+<h1>KDPP</h1>
+<ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'report' %}">Report Conflict</a></li>
+    <li><a href="{% url 'cases' %}">Cases</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+</nav>
+
+<!-- LANGUAGE SELECTOR -->
+<div class="language-selector">
+    <label for="language" style="font-weight:bold; font-size:1.1rem; margin-right:10px;">Choose Language / Chagua Lugha:</label>
+    <select id="language" name="language">
+        <option value="en">English</option>
+        <option value="sw">Swahili / Kiswahili</option>
+        <option value="ki">Kikuyu / Gikuyu</option>
+        <option value="luo">Luo / Dholuo</option>
+        <option value="luya">Luhya / Luhya</option>
+        <option value="kamba">Kamba / Kikamba</option>
+        <option value="meru">Meru / Kimeru</option>
+        <option value="maasai">Maasai / Maa</option>
+        <option value="somali">Somali / Af Soomaali</option>
+        <option value="other">Other / Lingua nyingine</option>
+    </select>
 </div>
 
-<!-- CONTACT SECTION -->
-<div class="contact-section">
+<!-- CONTACT FORM -->
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-    <!-- LEFT CONTACT INFO -->
-    <div class="info-box">
-        <h2>Contact Information</h2>
-        <p><strong>Email:</strong> support@kdpp.org</p>
-        <p><strong>Phone:</strong> +254 712 345 678</p>
-        <p><strong>Location:</strong> Nairobi, Kenya</p>
-    </div>
-
-    <!-- FORM -->
-    <div class="form-box">
-        <h2>Send Us a Message</h2>
-
-        <form method="POST" action="">
-            {% csrf_token %}
-
-            <label>Your Name</label>
-            <input type="text" name="name" required>
-
-            <label>Your Email</label>
-            <input type="email" name="email" required>
-
-            <label>Subject</label>
-            <input type="text" name="subject" required>
-
-            <label>Your Message</label>
-            <textarea name="message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-
-        {% if messages %}
-        <div class="msg-box">
-            {% for message in messages %}
-            <p>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
-    </div>
-
-</div>
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Kenya Digital Peace Platform — All Rights Reserved</p>
+    <p>
+        <a href="{% url 'index' %}">Home</a> |
+        <a href="{% url 'about' %}">About</a> |
+        <a href="{% url 'report' %}">Report</a> |
+        <a href="{% url 'cases' %}">Cases</a> |
+        <a href="{% url 'contact' %}">Contact</a>
+    </p>
+    <p>Committed to transparency, safety, and community unity across Kenya.</p>
+</footer>
 
 </body>
 </html>

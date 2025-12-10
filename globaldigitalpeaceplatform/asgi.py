@@ -1,5 +1,5 @@
 """
-ASGI config for kenyadigitalpeaceplatform project.
+ASGI config for globaldigitalpeaceplatform project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kenyadigitalpeaceplatform.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'globaldigitalpeaceplatform.settings')
 
 application = get_asgi_application()

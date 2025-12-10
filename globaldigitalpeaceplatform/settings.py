@@ -54,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'kenyadigitalpeaceplatform.wsgi.application'
+WSGI_APPLICATION = 'globaldigitalpeaceplatform.wsgi.application'
 
 
 # Database (default SQLite)
